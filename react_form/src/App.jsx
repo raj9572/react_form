@@ -1,13 +1,15 @@
 
 import './App.css'
-import FormWithoutYup from './components/from-without-yup'
+import FormWithYup from './components/form-with-yup'
+// import FormWithoutYup from './components/from-without-yup'
 
 function App() {
 
   return (
     <>
       <p>form in react</p>
-      <FormWithoutYup/>
+      {/* <FormWithoutYup/> */}
+      <FormWithYup/>
     </>
   )
 }
