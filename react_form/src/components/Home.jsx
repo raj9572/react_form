@@ -3,7 +3,7 @@ import {z} from 'zod'
 import {zodResolver} from '@hookform/resolvers/zod'
 
 const schema = z.object({
-    email:z.string().email,
+    email:z.string().email(),
     password:z.string().min(8)
 })
 
@@ -38,16 +38,7 @@ const onSubmit = async(data) =>{
        <input 
        type="email"
        placeholder="Enter your email"
-       {...register("email",{
-        required:"email is required",
-        // pattern:/^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/,
-        validate:(value)=>{
-            if(!value.includes("@")){
-                return "email must include @"
-            }
-            return true
-        }
-       })} 
+       {...register("email")} 
         
        
         />
@@ -58,13 +49,7 @@ const onSubmit = async(data) =>{
        type="password"
        autoComplete="off"
         placeholder="Enter your password" 
-        {...register("password",{
-            required:"password is requried",
-            minLength:{
-                value:8,
-                message:"password atleasr 8 char"
-            }
-        })}
+        {...register("password")}
         
        
         />
