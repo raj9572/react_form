@@ -1,6 +1,7 @@
 
 import './App.css'
-import FormWithYup from './components/form-with-yup'
+import FormikYup from './components/form-with-formik-yup'
+// import FormWithYup from './components/form-with-yup'
 // import FormWithoutYup from './components/from-without-yup'
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <>
       <p>form in react</p>
       {/* <FormWithoutYup/> */}
-      <FormWithYup/>
+      {/* <FormWithYup/> */}
+      <FormikYup/>
     </>
   )
 }

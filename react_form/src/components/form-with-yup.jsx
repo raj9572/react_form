@@ -62,8 +62,9 @@ const validationSchema = Yup.object({
     // console.log(parseUser,nonParsed)
 
      try {
-      await validationSchema.validate(formData , {abortEarly:false})
-      console.log('form data',formData)
+      const parseFormData = validationSchema.cast(formData)
+      await validationSchema.validate(parseFormData , {abortEarly:false})
+      console.log('form data',parseFormData)
      } catch (error) {
       console.log(error.inner)
       const newError = {}
